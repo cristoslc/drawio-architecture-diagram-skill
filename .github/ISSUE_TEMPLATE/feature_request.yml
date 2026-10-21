@@ -1,0 +1,29 @@
+name: "Feature request"
+description: "A rule, a check, or a piece of the workflow that would make the diagrams better."
+labels: ["enhancement"]
+body:
+  - type: input
+    id: reference
+    attributes: { label: "Related issue/PR", description: "Reference, or a short ID if none." }
+  - type: textarea
+    id: environment
+    attributes: { label: "Environment", description: "Where the skill is used and what kind of diagram is affected." }
+    validations: { required: true }
+  - type: textarea
+    id: problem
+    attributes: { label: "Problem", description: "What goes wrong today." }
+    validations: { required: true }
+  - type: textarea
+    id: goal
+    attributes: { label: "Goal", description: "What should happen instead." }
+    validations: { required: true }
+  - type: textarea
+    id: acceptance
+    attributes: { label: "Acceptance sketch", description: "How a reader or an author would tell it worked." }
+    validations: { required: true }
+  - type: textarea
+    id: alternatives
+    attributes: { label: "Alternatives and workarounds" }
+  - type: textarea
+    id: recommendation
+    attributes: { label: "Request or recommendation", description: "If you want this, say so." }

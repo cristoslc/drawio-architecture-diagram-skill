@@ -1,0 +1,29 @@
+name: "Bug report"
+description: "The skill produces a diagram that reads badly, or the gate reports something wrong."
+labels: ["bug"]
+body:
+  - type: input
+    id: reference
+    attributes: { label: "Related issue/PR", description: "Reference, or a short ID if none." }
+  - type: textarea
+    id: environment
+    attributes: { label: "Environment", description: "OS, Docker version, Python version, agent harness, where the skill is deployed." }
+    validations: { required: true }
+  - type: textarea
+    id: reproduction
+    attributes: { label: "Reproduction steps", description: "The diagram source, the command run, and what happened." }
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes: { label: "Expected result", description: "What the diagram or the gate should have done." }
+    validations: { required: true }
+  - type: textarea
+    id: actual
+    attributes: { label: "Actual result", description: "What happened. For a gate report, the exact message." }
+    validations: { required: true }
+  - type: textarea
+    id: workaround
+    attributes: { label: "Workarounds" }
+  - type: textarea
+    id: recommendation
+    attributes: { label: "Recommendation", description: "If a fix path exists, name it." }
