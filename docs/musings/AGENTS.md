@@ -1,3 +1,3 @@
 # Muse
 
-See `~/.agents/agents-md-detail/workflow-rituals/muse.md` for the Muse ritual protocol.
+See `~/.agents/agents-md-detail/workflow-rituals/musings.md` for the Muse ritual protocol.

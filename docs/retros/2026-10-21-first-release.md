@@ -14,7 +14,7 @@ parleyed: false
 
 ## Scope
 
-The build of a new repository holding one agent skill: it authors architecture diagrams as draw.io XML and ships each diagram as a committed `.drawio.svg` that renders inline in Markdown and still opens editable in draw.io. Eleven commits, from `ad95c8b` to `3d1bc72`, then the publication and the checks that followed it.
+The build of a new repository holding one agent skill: it authors architecture diagrams as draw.io XML and ships each diagram as a committed `.drawio.svg` that renders inline in Markdown and still opens editable in draw.io. Ten commits, from `ad95c8b` to `3d1bc72`, then the publication and the checks that followed it.
 
 ## What happened
 
