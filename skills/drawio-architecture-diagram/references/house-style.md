@@ -89,7 +89,7 @@ The shipped example in `examples/` measures these. A container that a routed edg
 - `edgeStyle=orthogonalEdgeStyle` with right angles everywhere.
 - A block arrowhead, filled, at the target.
 - Every edge label carries `labelBackgroundColor=#FFFFFF`, so it stays readable where it crosses a shape.
-- The plate is part of the palette, and it is pinned with the rest of it. Every colour above is a fixed value, so the plate and the text it sits behind always agree with each other. If a diagram's colours stop being pinned, the plate stops being pinned too, as `labelBackgroundColor=none`, because a plate left light under light text is a label nobody can read.
+- The plate is part of the palette, and it is pinned with the rest of it. If a diagram's colours stop being pinned, the plate stops being pinned too, as `labelBackgroundColor=none`, because a plate left light under light text is a label nobody can read.
 - An edge that reaches a shape on its left face enters horizontally. An edge that reaches the top face enters vertically.
 - An arrow's entry point may sit off the grid. Two arrows arriving at the same face need different heights, and a point that lands on the grid lands on the other arrow's point.
 - A back edge, the one that returns a response to the left, is routed on a column of its own, clear of every shape. That column may run inside a container's padding, which is what the padding is for, but it never crosses a shape.
