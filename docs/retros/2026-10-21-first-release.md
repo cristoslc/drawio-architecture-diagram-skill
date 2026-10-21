@@ -47,5 +47,5 @@ Two review rounds ran against the tree. The first round found the skill's own co
 ## Next actions
 
 - Publish the repository under the namespace the operator names, then check the inline rendering on GitHub and close the ADR's "Worse" note with what the live page shows.
-- Add the skill to the operator's plugin marketplace once the repository is public, the way `image-convergence-skill` and the other skills are listed.
 - Draw a second diagram with the house style. The first one was redrawn to fit the reference, which is not the same as a diagram drawn with the reference from the start, and the difference is where the reference's rules will show what they get wrong.
+- Decide how the skill reaches the harnesses. The sibling skills are installed by copying a directory, and this one follows that pattern. The BB plugin marketplace is a different surface, for BB plugins distributed as npm packages, so the skill does not belong there without a different distribution decision.
