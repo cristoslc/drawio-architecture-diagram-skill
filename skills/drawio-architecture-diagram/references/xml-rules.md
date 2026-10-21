@@ -1,6 +1,6 @@
 # draw.io XML rules
 
-The file format, the cell model, and how to write a style string. Everything here is what the draw.io desktop application reads, so a file written to these rules opens in draw.io and exports unchanged.
+The file format, the cell model, and how to write a style string. Everything here is what the draw.io desktop application reads, so a file written to these rules opens in draw.io and re-exports as the same diagram.
 
 ## The file shape
 
@@ -30,7 +30,15 @@ The file format, the cell model, and how to write a style string. Everything her
 - `mxfile` holds `diagram` elements. A diagram element holds the model, or a compressed copy of it. Write it uncompressed: a compressed diagram is base64 that a reader cannot review in a diff.
 - `mxGraphModel` holds the model attributes and one `root`.
 - `root` holds every cell.
-- Cell `0` is the root and cell `1` is the default layer. Every other cell names `1` as its parent, unless it sits inside a container, in which case the container is its parent.
+- Cell `0` is the root and cell `1` is the default layer. Every other cell names `1` as its parent.
+
+## The container is a band, not a parent
+
+A container in this house style is a shape drawn behind the group it holds, not a draw.io parent. The shapes inside it are siblings on the default layer, and every coordinate in the file is an absolute position on the canvas.
+
+That has one consequence worth knowing: a waypoint means the same thing as a shape position, so a route can be read against the shapes without translating between coordinate spaces. It has another: a reader who opens the file in draw.io and drags the band does not drag the shapes with it, because there is no parent-child link to follow. Move the shapes too, or reparent the group in draw.io, which is one drag.
+
+Write the containers before the shapes they hold. draw.io draws the cells in the order they appear, so a container written after the shapes would cover them.
 
 ## The cell model
 
@@ -43,7 +51,7 @@ A cell carries an `id`, an optional `value` that is its label, a `style` string,
 | `style` | the appearance. See below. |
 | `vertex="1"` | this cell is a shape. |
 | `edge="1"` | this cell is a connection. |
-| `parent` | the container this cell sits in, or the layer. |
+| `parent` | the layer the cell sits on. Every cell here names the default layer. |
 | `source` | for an edge, the cell it starts at. |
 | `target` | for an edge, the cell it ends at. |
 

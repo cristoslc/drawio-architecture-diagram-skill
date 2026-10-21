@@ -3,7 +3,7 @@
 Two components and one artifact of value:
 
 1. **The skill bundle** (`skills/drawio-architecture-diagram/`) — the prose protocol an agent consumes, the two reference documents it points at, and the two scripts it runs. No runtime of its own.
-2. **The test gate** (`scripts/test.sh`) — the validator's self-test over the fixtures and the damaged copies of them, then the committed example artifact against its source.
+2. **The test gate** (`scripts/test.sh`) — the validator's self-test over the fixtures and the damaged copies of them, the committed example artifact against its source, and every Mermaid diagram this repository ships.
 
 ```mermaid
 flowchart LR
@@ -12,6 +12,7 @@ flowchart LR
     S --> X["scripts/\nrender, validate"]
     X --> E["examples/\n.drawio + .drawio.svg"]
     T["scripts/test.sh"] --> X
+    T --> M["scripts/\nvalidate-mermaid.sh"]
     F["tests/fixtures/\n39 diagrams + artifacts"] --> X
 ```
 

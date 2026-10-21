@@ -1,7 +1,7 @@
 # 0001: Ship the diagram as a committed .drawio.svg
 
 **Date:** 2026-10-21
-**Status:** proposed
+**Status:** accepted
 
 ## Context
 

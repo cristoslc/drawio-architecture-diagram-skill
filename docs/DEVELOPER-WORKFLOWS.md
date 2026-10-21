@@ -10,7 +10,7 @@ bash scripts/test.sh
 
 ## Test
 
-`bash scripts/test.sh` is the whole gate. It runs the validator's self-test over the fixture diagrams and over deliberately damaged copies of them, then checks the committed example artifact against its source.
+`bash scripts/test.sh` is the whole gate. It runs the validator's self-test over the fixture diagrams and over deliberately damaged copies of them, checks the committed example artifact against its source, and renders every Mermaid diagram this repository ships.
 
 The render path needs Docker. It pulls a pinned image on first use and renders a diagram:
 
@@ -18,6 +18,10 @@ The render path needs Docker. It pulls a pinned image on first use and renders a
 bash skills/drawio-architecture-diagram/scripts/render-drawio-svg.sh \
   examples/order-intake.drawio examples/order-intake.drawio.svg
 ```
+
+The path to the render script is relative to the skill directory. In a repository that vendored the skill into `.opencode/skills/drawio-architecture-diagram/`, it is `.opencode/skills/drawio-architecture-diagram/scripts/render-drawio-svg.sh`.
+
+The Mermaid check needs `mmdc` on the PATH. It renders each inline diagram to a temporary SVG and fails the run on a parse error. It proves the diagram parses, not that it reads well.
 
 ## Branch and commit
 

@@ -46,7 +46,8 @@ deliberately damaged copies.
 Usage: python3 scripts/validate-drawio-svg.py <directory>
        python3 scripts/validate-drawio-svg.py --self-test
 
-The directory is walked for committed .drawio.svg files, and each one is
+The paths above are relative to the directory this script sits in. The
+directory is walked for committed .drawio.svg files, and each one is
 compared against the .drawio file beside it.
 """
 
@@ -62,10 +63,10 @@ import zlib
 def fixture_directory():
     """Find the fixture diagrams, wherever this copy of the script sits.
 
-    A consumer who vendors the skill into their own repository has the
-    fixtures next to the script, and the ones in this repository live under
-    tests/fixtures. Both layouts are searched, and DRAWDIO_SVG_FIXTURES
-    overrides both.
+    The fixtures are this repository's development evidence and live under
+    tests/fixtures. A vendored copy of the skill does not carry them, so the
+    self-test is a repository-level check and DRAWDIO_SVG_FIXTURES points a
+    copy at the corpus wherever it happens to be.
     """
     override = os.environ.get("DRAWDIO_SVG_FIXTURES")
     if override:

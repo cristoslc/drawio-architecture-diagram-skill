@@ -35,7 +35,7 @@ mkdir -p .opencode/skills && cp -r skills/drawio-architecture-diagram .opencode/
 mkdir -p ~/.config/opencode/skills && cp -r skills/drawio-architecture-diagram ~/.config/opencode/skills/
 ```
 
-The bundle is self-contained. It carries its own render script, its own validator, and the reference documents the skill points at.
+The bundle carries everything the skill needs to draw a diagram: its render script, its validator, and the reference documents the skill points at. The fixture corpus the validator's self-test runs over is the repository's development evidence and does not travel with the bundle, so a vendored copy runs the validator against its own diagrams rather than against the self-test.
 
 ## Use it
 
@@ -61,7 +61,7 @@ For a small diagram that belongs inside a paragraph, use Mermaid instead. It ren
 bash scripts/test.sh
 ```
 
-Runs the validator's own self-test over the fixture diagrams and over deliberately damaged copies, then checks the committed example artifact against its source.
+Runs the validator's own self-test over the fixture diagrams and over deliberately damaged copies, checks the committed example artifact against its source, and renders every Mermaid diagram this repository ships.
 
 ## Licence
 

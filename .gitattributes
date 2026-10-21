@@ -1,4 +1,9 @@
-# Images and binaries are LFS-tracked by type
+# Images and binaries are LFS-tracked by type.
+#
+# SVG is deliberately not tracked. A .drawio.svg holds the diagram XML inside
+# its root content attribute, and that XML has to stay diffable in git: a
+# reviewer reads the change to a diagram as a change to its source. An LFS
+# pointer would hide exactly the thing the file is for.
 *.png filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.jpeg filter=lfs diff=lfs merge=lfs -text

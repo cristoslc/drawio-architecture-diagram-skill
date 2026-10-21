@@ -5,16 +5,16 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
-        <mxCell id="c-clients" value="Client Channels" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=0;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontSize=13;fontColor=#64748B;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="c-clients" value="Client Channels" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=0;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontSize=13;fontColor=#64748B;fontStyle=1;fontFamily=Helvetica" vertex="1" parent="1">
           <mxGeometry x="40" y="40" width="240" height="240" as="geometry" />
         </mxCell>
-        <mxCell id="c-edge" value="Edge" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=0;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontSize=13;fontColor=#64748B;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="c-edge" value="Edge" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=0;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontSize=13;fontColor=#64748B;fontStyle=1;fontFamily=Helvetica" vertex="1" parent="1">
           <mxGeometry x="320" y="40" width="220" height="240" as="geometry" />
         </mxCell>
-        <mxCell id="c-services" value="Core Services" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=0;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontSize=13;fontColor=#64748B;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="c-services" value="Core Services" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=0;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontSize=13;fontColor=#64748B;fontStyle=1;fontFamily=Helvetica" vertex="1" parent="1">
           <mxGeometry x="600" y="40" width="580" height="290" as="geometry" />
         </mxCell>
-        <mxCell id="c-platform" value="Platform" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=0;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontSize=13;fontColor=#64748B;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="c-platform" value="Platform" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F8FAFC;strokeColor=#CBD5E1;dashed=0;verticalAlign=top;align=left;spacingLeft=14;spacingTop=8;fontSize=13;fontColor=#64748B;fontStyle=1;fontFamily=Helvetica" vertex="1" parent="1">
           <mxGeometry x="40" y="370" width="1120" height="250" as="geometry" />
         </mxCell>
 

@@ -44,22 +44,25 @@ Read `references/house-style.md` and follow it exactly. The palette, the type sc
 
 Read `references/xml-rules.md` for the file format, the cell model and the style string anatomy. Author uncompressed `<mxfile>` XML with explicit coordinates for every shape and an explicit route for every edge that crosses a cluster. The agent owns the layout: nothing is left to an automatic arranger, because an automatic arranger picks the positions and the reader is the one who has to live with them.
 
+A container is a band drawn behind the group it holds, not a draw.io parent, and every coordinate in the file is an absolute position on the canvas. `references/xml-rules.md` says why, and what a reader loses by it.
+
 ### 4. Validate
 
 ```bash
-python3 skills/drawio-architecture-diagram/scripts/validate-drawio-svg.py .
+python3 scripts/validate-drawio-svg.py <directory holding the diagrams>
 ```
 
 The check compares a committed `.drawio.svg` against its `.drawio` source and fails the build when they have drifted apart. It reads both sides the way draw.io reads a diagram, so a source that spells out a default attribute is not mistaken for a stale artifact.
 
+The path `scripts/validate-drawio-svg.py` is relative to this skill's own directory. In a repository that holds the skill at `skills/drawio-architecture-diagram/`, that is `skills/drawio-architecture-diagram/scripts/validate-drawio-svg.py`. In a repository that vendored the skill into `.opencode/skills/drawio-architecture-diagram/`, it is `.opencode/skills/drawio-architecture-diagram/scripts/validate-drawio-svg.py`.
+
 ### 5. Render
 
 ```bash
-bash skills/drawio-architecture-diagram/scripts/render-drawio-svg.sh \
-  docs/outputs/<name>.drawio docs/outputs/<name>.drawio.svg
+bash scripts/render-drawio-svg.sh <source.drawio> <artifact.drawio.svg>
 ```
 
-The render runs the draw.io desktop CLI inside a container and writes the SVG with the diagram XML embedded. It fails loudly and leaves the previous artifact untouched when it fails.
+The render runs the draw.io desktop CLI inside a container and writes the SVG with the diagram XML embedded. It fails loudly and leaves the previous artifact untouched when it fails. The same relative-path rule applies: `scripts/render-drawio-svg.sh` sits beside this document.
 
 ### 6. Look at the render
 
@@ -90,4 +93,5 @@ The source and the artifact travel together in one commit. The build compares th
 | `references/xml-rules.md` | the file format, the cell model, and how to write a style string |
 | `scripts/render-drawio-svg.sh` | renders a source into the committed artifact |
 | `scripts/validate-drawio-svg.py` | compares a committed artifact against its source, and self-tests the comparison |
-| `docs/outputs/` | the worked example this skill ships with |
+
+The worked example lives in the `examples/` directory of the repository that ships this skill, as a `.drawio` source beside its `.drawio.svg` artifact.

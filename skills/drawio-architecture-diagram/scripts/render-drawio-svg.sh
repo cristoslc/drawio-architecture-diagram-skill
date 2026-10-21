@@ -11,10 +11,11 @@
 # container. The -e flag is the --embed-diagram flag the AWS skill prescribes.
 #
 # Usage: bash scripts/render-drawio-svg.sh <input.drawio> <output.drawio.svg>
+#
+# The path above is relative to the directory this script sits in.
 
 set -euo pipefail
 
-REPO_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)"
 IMAGE="rlespinasse/drawio-export:v4.60.0"
 BORDER=24
 
@@ -44,11 +45,13 @@ if ! command -v docker >/dev/null 2>&1; then
   exit 127
 fi
 
-# The container mounts a directory under the repository, not a system temporary
-# directory. Docker Desktop shares the home directory by default, so a mount
-# under /var/folders resolves to an empty directory on the container side and
-# the export fails with a path error that reads like a corrupt file.
-WORK="$REPO_ROOT/.tmp/render-drawio-svg"
+# The container mounts a directory under the home directory, not a system
+# temporary directory. Docker Desktop shares the home directory by default, so
+# a mount under /var/folders resolves to an empty directory on the container
+# side and the export fails with a path error that reads like a corrupt file.
+# The work directory sits outside any repository so that rendering never
+# leaves a scratch directory in the tree being drawn into.
+WORK="${DRAWDIO_RENDER_WORK:-$HOME/.cache/drawio-architecture-diagram/render}"
 rm -rf "$WORK"
 mkdir -p "$WORK"
 
@@ -84,7 +87,7 @@ if ! export_svg >"$WORK/export.log" 2>&1; then
     cat "$WORK/export.log" >&2
     if grep -q "must exist" "$WORK/export.log"; then
       echo "      The container could not read the mounted path. Check that" >&2
-      echo "      $REPO_ROOT is shared with Docker Desktop." >&2
+      echo "      $HOME is shared with Docker Desktop." >&2
     elif grep -q "can parse xml" "$WORK/export.log"; then
       echo "      The container could not parse the input as draw.io XML." >&2
     fi
