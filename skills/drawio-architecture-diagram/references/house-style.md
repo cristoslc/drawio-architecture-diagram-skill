@@ -65,7 +65,7 @@ edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#475569;strokeWidth=2
 
 | Rule | Value |
 |---|---|
-| Grid | every coordinate is a multiple of 10 |
+| Grid | every shape's position and size is a multiple of 10 |
 | Shape size | 160 to 180 wide by 60 high, wide enough for the label on one line |
 | Shape gap inside a container | 40 vertical; 20 to 70 horizontal, the wider where the pair needs breathing room |
 | Container padding | at least 30 to the left and right of the shapes, at least 40 above and below, and more on the side a routed edge needs a channel |
@@ -90,6 +90,7 @@ The shipped example in `examples/` measures these. A container that a routed edg
 - A block arrowhead, filled, at the target.
 - Every edge label carries `labelBackgroundColor=#FFFFFF`, so it stays readable where it crosses a shape.
 - An edge that reaches a shape on its left face enters horizontally. An edge that reaches the top face enters vertically.
+- An arrow's entry point may sit off the grid. Two arrows arriving at the same face need different heights, and a point that lands on the grid lands on the other arrow's point.
 - A back edge, the one that returns a response to the left, is routed on a column of its own, clear of every shape. That column may run inside a container's padding, which is what the padding is for, but it never crosses a shape.
 
 ## What the render must not show

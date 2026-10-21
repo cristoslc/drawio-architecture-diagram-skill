@@ -19,7 +19,7 @@ bash skills/drawio-architecture-diagram/scripts/render-drawio-svg.sh \
   examples/order-intake.drawio examples/order-intake.drawio.svg
 ```
 
-The path to the render script is relative to the skill directory. In a repository that vendored the skill into `.opencode/skills/drawio-architecture-diagram/`, it is `.opencode/skills/drawio-architecture-diagram/scripts/render-drawio-svg.sh`.
+The path to the render script is relative to the repository root here. In a repository that vendored the skill into `.opencode/skills/drawio-architecture-diagram/`, it is `.opencode/skills/drawio-architecture-diagram/scripts/render-drawio-svg.sh`.
 
 The Mermaid check needs `mmdc` on the PATH. It renders each inline diagram to a temporary SVG and fails the run on a parse error. It proves the diagram parses, not that it reads well.
 

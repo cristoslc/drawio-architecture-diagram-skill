@@ -9,7 +9,7 @@ The rules that hold at the detailed level.
 3. **A source is readable text.** Uncompressed XML, so a diff shows what changed.
 4. **The comparison reads both sides the way draw.io reads a diagram.** A source that spells out a default attribute, or writes a number in another notation, is not drift.
 5. **A rendered artifact is looked at.** Structural validity and readability are different properties, and only the second one needs an eye.
-6. **The house style is a contract.** The example under `examples/` is drawn with the rules in `references/house-style.md`, and a rule change moves both.
+6. **The house style is a contract.** The example under `examples/` is drawn with the rules in `skills/drawio-architecture-diagram/references/house-style.md`, and a rule change moves both.
 
 ## Entities
 

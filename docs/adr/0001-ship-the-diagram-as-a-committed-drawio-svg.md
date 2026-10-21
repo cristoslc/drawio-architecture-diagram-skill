@@ -37,4 +37,4 @@ The skill owns the layout and pins a house style, because a diagram that is tech
 
 **Bad.** Two files per diagram. The artifact must be regenerated when the source changes, which the build enforces rather than trusting. The render path needs Docker and a pinned export image, so a machine without them can check an artifact but not produce one.
 
-**Worse.** The GitHub rendering claim rests on a community statement rather than the vendor's documentation, so it is the first thing to check when the repository is published. The style reference was written from a survey of existing skills rather than from a working set of house diagrams, so the first real diagrams drawn with it are the ones that will show what the rules get wrong.
+**Worse.** The GitHub rendering claim rests on a community statement rather than the vendor's documentation, so it is the first thing to check when the repository is published. The style reference has one worked example behind it, the one in this repository, so the second real diagram drawn with the rules is the one that will show what they get wrong.

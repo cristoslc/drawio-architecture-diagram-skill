@@ -8,4 +8,4 @@ The system context, the container view and the component view, one file each.
 | `container.md` | the skill as a container: the bundle, the fixtures, the scripts |
 | `component.md` | the parts inside the skill bundle and what each one does |
 
-Every diagram here is Mermaid, and every one is checked by `bash scripts/validate-diagrams.sh`.
+Every diagram here is Mermaid, and every one is checked by `bash scripts/test.sh`.
