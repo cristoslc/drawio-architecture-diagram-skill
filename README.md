@@ -17,6 +17,12 @@ Two files, always both of them.
 
 The `.drawio.svg` carries the diagram XML inside its root `content` attribute. That is what makes it both a picture and an editable file. A PNG cannot be fixed by the reader who spots the problem.
 
+The worked example this repository ships, the order-intake reference architecture:
+
+![The order-intake reference architecture, drawn by this skill](examples/order-intake.drawio.svg)
+
+Its source is [`examples/order-intake.drawio`](examples/order-intake.drawio), and the artifact above is the file GitHub is rendering right now. Download it, open it in draw.io, and the diagram is there to edit.
+
 ## The loop in one line
 
 `pick the mode -> apply the house style -> author the XML -> validate -> render -> look at the render -> correct -> commit both files`
