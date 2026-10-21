@@ -27,6 +27,18 @@ The Mermaid check needs `mmdc` on the PATH. It renders each inline diagram to a 
 
 Work on a branch. A change to a diagram changes its source and its artifact in the same commit, because the gate compares them.
 
+## Staging
+
+This project deploys nothing. The skill is installed by copying its directory into a consumer repository, and the artifact it produces is a file the consumer commits. The staging scripts say so rather than pretending otherwise:
+
+```bash
+bash scripts/staging/deploy.sh
+bash scripts/staging/e2e.sh
+bash scripts/staging/teardown.sh
+```
+
+The end-to-end script runs the gate, which is the end-to-end check this project has: it renders a diagram from source and compares the artifact with that source.
+
 ## Release
 
 Tag the repository. A consumer vendors the skill directory into their own repository, so a tag is what they pin.
