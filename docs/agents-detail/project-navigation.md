@@ -16,6 +16,7 @@
 - `skills/drawio-architecture-diagram/scripts/` — the render script and the validator
 - `examples/` — the worked example, source and committed artifact
 - `tests/fixtures/` — the diagrams the exporter's behaviour was measured on
+- `docs/test-coverage-matrix.md` — the master coverage matrix for the gate
 
 ## Hubs and spokes
 
