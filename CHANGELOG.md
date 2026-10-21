@@ -18,3 +18,4 @@ All notable changes to this project are documented here. The format follows [Kee
 
 - The skill's own commands named paths that only resolved in this repository. They are relative to the skill directory now, so a consumer who vendored the bundle can run them.
 - The house style and the worked example disagreed about the spacing, and the reference described a parent-child relationship the example does not use. The reference now states what the example measures, and the container style carries the font family the type rule promises.
+- The house style pinned the label plate behind an edge label without saying that the plate travels with the palette. A diagram whose colours stopped being pinned would have kept a light plate under a label that had gone light, and the label would have stopped being readable. The reference and the skill now say the plate is pinned with the rest of the palette.
