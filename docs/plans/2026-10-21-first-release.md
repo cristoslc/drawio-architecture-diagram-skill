@@ -20,8 +20,18 @@
 |---|---|
 | The style reference is wrong and every diagram inherits the mistake | the example under `examples/` is drawn with it and is checked by eye |
 | The validator is adapted and breaks a rule | the self-test over the fixtures and the damaged copies runs on every build |
-| A consumer vendors the skill and the validator cannot find its fixtures | the fixture lookup searches three locations and takes an environment override |
+| A consumer vendors the skill and the validator cannot find its fixtures | the self-test is a repository-level check, and the fixture lookup searches three locations and takes an environment override |
 | The export is not reproducible | the export image is pinned by tag, and the render script fails loud rather than writing a broken artifact |
+
+## Outcome
+
+The skill, the two references, the two scripts, the fixture corpus, the worked example and the decision record are in place, and the gate is green. Two review rounds ran against the branch; every blocking finding they raised is fixed, and the fixes are in the history.
+
+Two things changed the plan as it was written.
+
+The example was redrawn against the style reference rather than carried over as it was. The reference and the example disagreed about the spacing, and a contract that its own worked example violates is not a contract. The reference now states the ranges the example measures.
+
+The skill's commands are relative to the skill directory. The first version named paths that only resolved in this repository, which would have broken every consumer who copied the bundle. The repository's own paths are still in the developer workflow document, where a reader stands at the repository root.
 
 ## Deferred
 
