@@ -81,7 +81,7 @@ The source and the artifact travel together in one commit. The build compares th
 - **Look at every render.** The validator checks structure. Only a reader's eye catches a collision.
 - **Own the layout.** Place every shape and route every edge yourself. Never accept coordinates you did not choose.
 - **Keep the cluster flat.** One level of grouping reads better than nesting.
-- **Back every edge label.** A label with a background plate stays readable where it crosses a shape.
+- **Back every edge label.** A label with a background plate stays readable where it crosses a shape. The plate is pinned with the palette, so a diagram whose colours stop being pinned drops the plate with them.
 - **Ship the editable artifact.** A PNG cannot be fixed by the reader who spots the problem. An SVG with the XML inside can.
 - **Regenerate on every source change.** The gate will tell you if you forget.
 
