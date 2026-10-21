@@ -35,6 +35,10 @@ Runs the validator's self-test over the fixture diagrams and over deliberately d
 
 Master coverage matrix: `docs/test-coverage-matrix.md`
 
+## Contribution guidelines
+
+`CONTRIBUTING.md` holds the process for a human contributor. `docs/agents-detail/contribution-guidelines.md` holds what an agent does differently.
+
 ## Intent mode additions
 
 - Deleting or rewriting a committed fixture under `tests/fixtures/` requires operator confirmation. The fixtures are evidence of what the exporter does.

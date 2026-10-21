@@ -5,6 +5,8 @@
 - `PURPOSE.md` — the one-paragraph intent
 - `README.md` — the landing page for a human reader
 - `AGENTS.md` — the guidance for an agent working in this repository
+- `CONTRIBUTING.md` — the process for a human contributor
+- `docs/agents-detail/contribution-guidelines.md` — what an agent does differently, from the test command to worktree discipline
 
 ## The artifact
 
