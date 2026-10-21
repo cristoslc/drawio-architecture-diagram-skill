@@ -14,7 +14,7 @@ parleyed: false
 
 ## Scope
 
-The build of a new repository holding one agent skill: it authors architecture diagrams as draw.io XML and ships each diagram as a committed `.drawio.svg` that renders inline in Markdown and still opens editable in draw.io. Eight commits, from `ad95c8b` to `ecb404d`.
+The build of a new repository holding one agent skill: it authors architecture diagrams as draw.io XML and ships each diagram as a committed `.drawio.svg` that renders inline in Markdown and still opens editable in draw.io. Eleven commits, from `ad95c8b` to `3d1bc72`, then the publication and the checks that followed it.
 
 ## What happened
 
@@ -36,16 +36,28 @@ Two review rounds ran against the tree. The first round found the skill's own co
 - **The skill's commands were written from the repository's point of view.** Both the validate and render steps named `skills/drawio-architecture-diagram/scripts/...`, which is exactly the path a vendored copy does not have. The skill had to be corrected to skill-relative paths after the fact. A skill is read by an agent standing in a consumer's repository, and that is the position the commands should have been written from.
 - **The first draft of the house style was written from a survey, not from a diagram.** It described a clean spacing table with no diagram behind it, so it drifted from the example the moment the example existed. The reference would have been easier to write from a drawn diagram in the first place.
 - **The gate did not check the Mermaid diagrams the repository ships.** Three diagrams sat in `docs/` with nothing rendering them. A rule in the house style says every diagram is validated, and the repository broke its own rule until the check was added.
-- **The first publication answer was the wrong question.** The repository was about to be published before anyone asked which namespace it should live in.
+- **The first publication answer was the wrong question.** The repository was about to be published before anyone asked which namespace it should live in. The question was eventually asked, and it went unanswered, so the publication followed the sibling-skill pattern into the operator's own account.
 
 ## What surfaced
 
 - **A contract and its worked example have to be written together.** The style reference and the example were produced separately and disagreed. The house rule that fixes this, that a rule change moves the reference, the example and the artifact in one commit, is now in `AGENTS.md`.
 - **The fixture corpus does not travel with the bundle.** A vendored copy of the skill runs the validator against its own diagrams, which is the job it has to do, and the self-test stays a repository-level check. The earlier claim that the bundle was self-contained was false, and the reviewer's reproduction of that made the fix unavoidable rather than optional.
-- **The GitHub rendering claim is the weakest link in the evidence chain.** The vendor documents that the diagram XML lives in the SVG's `content` attribute, but the claim that GitHub renders such a file inline rests on a community extension's README. ADR 0001 records this as the first thing to check after publication.
+- **The namespace question was asked and went unanswered.** The question went out with the operator's other questions and came back with no answer, so the publication went ahead on the pattern every sibling skill already follows: a public repository under the operator's own account, named after the skill. That is a guess with a cheap reversal, since a repository moves between accounts without anyone redoing the work.
+- **The GitHub rendering claim was the weakest link in the evidence chain.** The vendor documents that the diagram XML lives in the SVG's `content` attribute, but the claim that GitHub renders such a file inline rested on a community extension's README. Both halves of the claim were checked against the published repository afterwards, and the checks are recorded below.
 
 ## Next actions
 
-- Publish the repository under the namespace the operator names, then check the inline rendering on GitHub and close the ADR's "Worse" note with what the live page shows.
 - Draw a second diagram with the house style. The first one was redrawn to fit the reference, which is not the same as a diagram drawn with the reference from the start, and the difference is where the reference's rules will show what they get wrong.
 - Decide how the skill reaches the harnesses. The sibling skills are installed by copying a directory, and this one follows that pattern. The BB plugin marketplace is a different surface, for BB plugins distributed as npm packages, so the skill does not belong there without a different distribution decision.
+
+## What was checked after publication
+
+The repository is published at `github.com/cristoslc/drawio-architecture-diagram-skill`, public, with the GitHub remote named `gh` like its sibling skills.
+
+Both halves of the delivery claim were then checked against the live repository rather than argued.
+
+The rendering half: GitHub's Markdown pipeline turns the example's image link into an `img` element pointing at the file's raw route, that route answers `200` with the content type `image/svg+xml`, and a browser renders the response at its natural size with the diagram intact.
+
+The editability half: handing the committed `.drawio.svg` to the draw.io desktop CLI, running in the pinned container, produces a render of the same diagram, so the CLI read the diagram out of the SVG's `content` attribute rather than out of the picture. Changing one label inside that attribute and rendering again produces a picture with the changed label.
+
+The ADR's "Worse" note, which said the GitHub rendering claim was the first thing to check after publication, now records what the live repository showed. What is left open is not the delivery mechanism but the style reference, which still has only one diagram behind it.

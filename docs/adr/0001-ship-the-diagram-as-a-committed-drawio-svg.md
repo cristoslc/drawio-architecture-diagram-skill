@@ -37,4 +37,8 @@ The skill owns the layout and pins a house style, because a diagram that is tech
 
 **Bad.** Two files per diagram. The artifact must be regenerated when the source changes, which the build enforces rather than trusting. The render path needs Docker and a pinned export image, so a machine without them can check an artifact but not produce one.
 
-**Worse.** The GitHub rendering claim rests on a community statement rather than the vendor's documentation, so it is the first thing to check when the repository is published. The style reference has one worked example behind it, the one in this repository, so the second real diagram drawn with the rules is the one that will show what they get wrong.
+**Worse.** The style reference has one worked example behind it, the one in this repository, so the second real diagram drawn with the rules is the one that will show what they get wrong.
+
+**Checked after publication.** The rendering claim is no longer resting on a community statement alone. On the published repository, GitHub's Markdown pipeline turns `![...](examples/order-intake.drawio.svg)` into an `img` element pointing at the file's raw route, that route answers `200` with the content type `image/svg+xml`, and a browser renders the response at its natural size with the diagram intact.
+
+The editability claim was checked the same way, through the draw.io desktop CLI running in the pinned container. Handing that CLI the committed `.drawio.svg` produces a render of the same diagram, which means the CLI read the diagram out of the SVG's `content` attribute rather than out of the picture. Changing one label inside that attribute and rendering again produces a picture with the changed label. The artifact is both the picture a reader sees and the file a reader edits.
