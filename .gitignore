@@ -1,0 +1,22 @@
+# Worktrees
+.worktrees/
+
+# macOS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Editor
+.idea/
+.vscode/
+*.sublime-*
+
+# OS
+Thumbs.db
+
+# Scratch renders
+.tmp/
+
+# Test results
+tests/results/
