@@ -1,0 +1,5 @@
+{
+  "name": "drawio-architecture-diagram-skill",
+  "description": "Author professional architecture diagrams as draw.io XML and ship them as a committed .drawio.svg that renders inline in Markdown and still opens editable in draw.io.",
+  "skills": ["./skills/drawio-architecture-diagram"]
+}

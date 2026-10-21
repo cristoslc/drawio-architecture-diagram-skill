@@ -1,6 +1,12 @@
 ---
 name: drawio-architecture-diagram
 description: "Author professional architecture diagrams as draw.io XML and ship them as a committed .drawio.svg that renders inline in Markdown and still opens editable in draw.io. Use this skill when the user asks for an architecture diagram, a service map, a system context picture, or wants infrastructure visualised from CloudFormation, CDK or Terraform. Skip it for a small diagram that belongs inside a paragraph, where Mermaid renders natively and keeps no artifact in sync."
+license: MIT
+compatibility: "Needs Docker for the render path. The validator needs Python 3 and nothing else."
+metadata:
+  short-description: Architecture diagrams as draw.io XML, shipped as an editable SVG
+  author: cristoslc
+  version: 1.0.0
 ---
 
 # Draw.io architecture diagram
